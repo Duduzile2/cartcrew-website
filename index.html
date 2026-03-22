@@ -151,12 +151,12 @@
       CartCrew has not launched yet — sign up to be first in line
     </div>
     <div class="form-wrap">
-      <div class="form-row">
-        <input type="email" id="emailInput" placeholder="Enter your email address" autocomplete="off"/>
-        <button onclick="handleSignup()">Join Waitlist</button>
-      </div>
-      <p class="form-note">// Early access only — no spam, ever. Free for users always.</p>
-      <p class="success-msg" id="successMsg">✓ You're on the waitlist. We'll notify you the moment CartCrew launches. 🙌</p>
+      <a href="https://forms.gle/Sem4BR5Aaxh6Cd7E8" target="_blank" style="display:block; width:100%; text-decoration:none;">
+        <button style="width:100%; padding:20px; background:linear-gradient(135deg,#F4C2A1,#B5683A); color:#0D0A08; border:none; border-radius:16px; font-family:'Outfit',sans-serif; font-weight:700; font-size:16px; letter-spacing:1.5px; text-transform:uppercase; cursor:pointer; transition:opacity 0.2s;">
+          Join the Waitlist — It's Free 🌹
+        </button>
+      </a>
+      <p class="form-note">// Takes 10 seconds. No spam, ever. Free for users always.</p>
     </div>
     <div class="scroll-hint">
       <span>Scroll</span>
@@ -239,12 +239,12 @@
     <h2 class="cta-title">Be part of the <span>founding crew.</span></h2>
     <p class="cta-sub">CartCrew is not live yet — but it's coming. Join our waitlist now and get early access before we publicly launch. The first people in shape what CartCrew becomes.</p>
     <div class="form-wrap" style="margin:0 auto;">
-      <div class="form-row">
-        <input type="email" id="emailInput2" placeholder="Your email address" autocomplete="off"/>
-        <button onclick="handleSignup2()">Secure My Spot</button>
-      </div>
+      <a href="https://forms.gle/Sem4BR5Aaxh6Cd7E8" target="_blank" style="display:block; width:100%; text-decoration:none;">
+        <button style="width:100%; padding:20px; background:linear-gradient(135deg,#F4C2A1,#B5683A); color:#0D0A08; border:none; border-radius:16px; font-family:'Outfit',sans-serif; font-weight:700; font-size:16px; letter-spacing:1.5px; text-transform:uppercase; cursor:pointer; transition:opacity 0.2s;">
+          Secure My Spot — Join the Crew 🛒
+        </button>
+      </a>
       <p class="form-note">// Free forever for users. No credit card. No catch.</p>
-      <p class="success-msg" id="successMsg2">✓ Spot secured. Welcome to the founding CartCrew. 🛒</p>
     </div>
   </section>
 
@@ -262,22 +262,20 @@
       const msg   = document.getElementById('successMsg');
       if (!input.value || !input.value.includes('@')) { input.focus(); return; }
       msg.style.display = 'block';
-      setTimeout(() => {
-        msg.style.display = 'none';
-        window.open(FORM_URL, '_blank');
-      }, 1200);
       input.value = '';
+      setTimeout(() => {
+        window.location.href = FORM_URL;
+      }, 1000);
     }
     function handleSignup2() {
       const input = document.getElementById('emailInput2');
       const msg   = document.getElementById('successMsg2');
       if (!input.value || !input.value.includes('@')) { input.focus(); return; }
       msg.style.display = 'block';
-      setTimeout(() => {
-        msg.style.display = 'none';
-        window.open(FORM_URL, '_blank');
-      }, 1200);
       input.value = '';
+      setTimeout(() => {
+        window.location.href = FORM_URL;
+      }, 1000);
     }
     document.getElementById('emailInput').addEventListener('keydown', e => { if(e.key==='Enter') handleSignup(); });
     document.getElementById('emailInput2').addEventListener('keydown', e => { if(e.key==='Enter') handleSignup2(); });
